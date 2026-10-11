@@ -1,0 +1,7 @@
+{
+  "sustained_sm_clock_mhz": 1552,
+  "avg_power_w": 89.8,
+  "max_temp_c": 77.0,
+  "cublas_gflops_10s": 5072.7,
+  "peak_fp32_gflops_at_sustained_clock": 7947.7
+}

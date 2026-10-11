@@ -1,0 +1,14 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+  "compute_capability": "8.6",
+  "sms": 20,
+  "fp32_cores": 2560,
+  "boost_clock_ghz": 1.732,
+  "peak_fp32_gflops": 8867.8,
+  "peak_dram_gbps": 168.0,
+  "l2_mb": 1.5,
+  "max_threads_per_sm": 1536,
+  "cuda_runtime": 12090,
+  "driver": 13000,
+  "cupy": "14.2.0"
+}

@@ -1,0 +1,36 @@
+kernel,size,time_ms,gflops,pct_peak,max_rel_error,correct,regs_per_thread,static_smem_bytes
+sgemm0_naive,256,0.6189,54.2,0.6,5.91e-07,True,40,0
+sgemm1_coalesced,256,0.1146,292.7,3.3,5.91e-07,True,40,0
+sgemm2_smem_tiled,256,0.0625,537.2,6.1,5.91e-07,True,38,8192
+sgemm3_1d_blocktile,256,0.0604,555.4,6.3,5.91e-07,True,53,4096
+sgemm4_2d_blocktile,256,0.0693,484.4,5.5,5.91e-07,True,96,8192
+sgemm5_vectorized,256,0.065,516.0,5.8,5.91e-07,True,101,8192
+cublas (cupy.matmul),256,0.1069,314.0,3.5,0.00e+00,True,,
+sgemm0_naive,512,3.689,72.8,0.8,9.51e-07,True,40,0
+sgemm1_coalesced,512,0.4762,563.8,6.4,9.51e-07,True,40,0
+sgemm2_smem_tiled,512,0.3787,708.9,8.0,9.51e-07,True,38,8192
+sgemm3_1d_blocktile,512,0.1637,1639.5,18.5,9.51e-07,True,53,4096
+sgemm4_2d_blocktile,512,0.1585,1693.3,19.1,9.51e-07,True,96,8192
+sgemm5_vectorized,512,0.1116,2405.0,27.1,9.51e-07,True,101,8192
+cublas (cupy.matmul),512,0.086,3121.3,35.2,0.00e+00,True,,
+sgemm0_naive,1024,29.3052,73.3,0.8,1.54e-06,True,40,0
+sgemm1_coalesced,1024,3.9132,548.8,6.2,1.54e-06,True,40,0
+sgemm2_smem_tiled,1024,3.2604,658.7,7.4,1.54e-06,True,38,8192
+sgemm3_1d_blocktile,1024,1.0317,2081.6,23.5,1.54e-06,True,53,4096
+sgemm4_2d_blocktile,1024,0.7941,2704.4,30.5,1.54e-06,True,96,8192
+sgemm5_vectorized,1024,0.5503,3902.7,44.0,1.54e-06,True,101,8192
+cublas (cupy.matmul),1024,0.4264,5036.1,56.8,0.00e+00,True,,
+sgemm0_naive,2048,232.2099,74.0,0.8,2.09e-06,True,40,0
+sgemm1_coalesced,2048,30.8833,556.3,6.3,2.09e-06,True,40,0
+sgemm2_smem_tiled,2048,25.3284,678.3,7.6,2.09e-06,True,38,8192
+sgemm3_1d_blocktile,2048,8.1694,2103.0,23.7,2.09e-06,True,53,4096
+sgemm4_2d_blocktile,2048,4.9454,3473.9,39.2,2.09e-06,True,96,8192
+sgemm5_vectorized,2048,3.7181,4620.5,52.1,2.09e-06,True,101,8192
+cublas (cupy.matmul),2048,3.3736,5092.5,57.4,0.00e+00,True,,
+sgemm0_naive,4096,1854.4733,74.1,0.8,3.52e-06,True,40,0
+sgemm1_coalesced,4096,249.5549,550.7,6.2,3.52e-06,True,40,0
+sgemm2_smem_tiled,4096,202.2912,679.4,7.7,3.52e-06,True,38,8192
+sgemm3_1d_blocktile,4096,64.9155,2117.2,23.9,3.52e-06,True,53,4096
+sgemm4_2d_blocktile,4096,39.9698,3438.6,38.8,3.52e-06,True,96,8192
+sgemm5_vectorized,4096,30.6388,4485.8,50.6,3.52e-06,True,101,8192
+cublas (cupy.matmul),4096,27.7253,4957.2,55.9,0.00e+00,True,,

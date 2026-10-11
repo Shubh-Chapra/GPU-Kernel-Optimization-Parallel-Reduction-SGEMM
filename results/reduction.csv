@@ -1,0 +1,8 @@
+kernel,n,time_ms,bandwidth_gbps,pct_peak_bw,rel_error,correct,launches,regs_per_thread,static_smem_bytes,blocks
+reduce0_interleaved_divergent,33554432,2.7498,48.8,29.1,1.70e-09,True,4,13,1024,
+reduce1_interleaved_bankconflict,33554432,1.7428,77.0,45.8,1.70e-09,True,4,11,1024,
+reduce2_sequential,33554432,1.6568,81.0,48.2,1.70e-09,True,4,10,1024,
+reduce3_first_add,33554432,0.8741,153.5,91.4,5.79e-08,True,3,12,1024,
+reduce4_warp_shuffle,33554432,0.8417,159.5,94.9,5.79e-08,True,3,13,1024,
+reduce5_gridstride_vec4,33554432,0.8339,161.0,95.8,1.21e-07,True,1,16,32,120
+cub (cupy.sum),33554432,0.8534,157.3,93.6,5.79e-08,True,,,,

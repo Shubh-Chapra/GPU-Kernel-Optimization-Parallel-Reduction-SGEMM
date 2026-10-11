@@ -1,0 +1,62 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+  "compute_capability": "8.6",
+  "sms": 20,
+  "fp32_cores": 2560,
+  "boost_clock_ghz": 1.732,
+  "peak_fp32_gflops": 8867.8,
+  "peak_dram_gbps": 168.0,
+  "l2_mb": 1.5,
+  "max_threads_per_sm": 1536,
+  "cuda_runtime": 12090,
+  "driver": 13000,
+  "cupy": "14.2.0"
+}
+
+Reduction: sum of 33,554,432 floats (128 MiB)
+  reduce0_interleaved_divergent         2.750 ms     48.8 GB/s  ( 29.1% peak)  err 1.7e-09  OK
+  reduce1_interleaved_bankconflict      1.743 ms     77.0 GB/s  ( 45.8% peak)  err 1.7e-09  OK
+  reduce2_sequential                    1.657 ms     81.0 GB/s  ( 48.2% peak)  err 1.7e-09  OK
+  reduce3_first_add                     0.874 ms    153.5 GB/s  ( 91.4% peak)  err 5.8e-08  OK
+  reduce4_warp_shuffle                  0.842 ms    159.5 GB/s  ( 94.9% peak)  err 5.8e-08  OK
+  reduce5_gridstride_vec4               0.834 ms    161.0 GB/s  ( 95.8% peak)  err 1.2e-07  OK
+  cub (cupy.sum)                        0.853 ms    157.3 GB/s  ( 93.6% peak)  err 5.8e-08  OK
+
+SGEMM: C = A @ B, square FP32 matrices
+    256  sgemm0_naive               0.619 ms      54.2 GFLOP/s  (  0.6% peak)  err 5.9e-07  OK
+    256  sgemm1_coalesced           0.115 ms     292.7 GFLOP/s  (  3.3% peak)  err 5.9e-07  OK
+    256  sgemm2_smem_tiled          0.062 ms     537.2 GFLOP/s  (  6.1% peak)  err 5.9e-07  OK
+    256  sgemm3_1d_blocktile        0.060 ms     555.4 GFLOP/s  (  6.3% peak)  err 5.9e-07  OK
+    256  sgemm4_2d_blocktile        0.069 ms     484.4 GFLOP/s  (  5.5% peak)  err 5.9e-07  OK
+    256  sgemm5_vectorized          0.065 ms     516.0 GFLOP/s  (  5.8% peak)  err 5.9e-07  OK
+    256  cublas (cupy.matmul)       0.107 ms     314.0 GFLOP/s  (  3.5% peak)  err 0.0e+00  OK
+    512  sgemm0_naive               3.689 ms      72.8 GFLOP/s  (  0.8% peak)  err 9.5e-07  OK
+    512  sgemm1_coalesced           0.476 ms     563.8 GFLOP/s  (  6.4% peak)  err 9.5e-07  OK
+    512  sgemm2_smem_tiled          0.379 ms     708.9 GFLOP/s  (  8.0% peak)  err 9.5e-07  OK
+    512  sgemm3_1d_blocktile        0.164 ms    1639.5 GFLOP/s  ( 18.5% peak)  err 9.5e-07  OK
+    512  sgemm4_2d_blocktile        0.159 ms    1693.3 GFLOP/s  ( 19.1% peak)  err 9.5e-07  OK
+    512  sgemm5_vectorized          0.112 ms    2405.0 GFLOP/s  ( 27.1% peak)  err 9.5e-07  OK
+    512  cublas (cupy.matmul)       0.086 ms    3121.3 GFLOP/s  ( 35.2% peak)  err 0.0e+00  OK
+   1024  sgemm0_naive              29.305 ms      73.3 GFLOP/s  (  0.8% peak)  err 1.5e-06  OK
+   1024  sgemm1_coalesced           3.913 ms     548.8 GFLOP/s  (  6.2% peak)  err 1.5e-06  OK
+   1024  sgemm2_smem_tiled          3.260 ms     658.7 GFLOP/s  (  7.4% peak)  err 1.5e-06  OK
+   1024  sgemm3_1d_blocktile        1.032 ms    2081.6 GFLOP/s  ( 23.5% peak)  err 1.5e-06  OK
+   1024  sgemm4_2d_blocktile        0.794 ms    2704.4 GFLOP/s  ( 30.5% peak)  err 1.5e-06  OK
+   1024  sgemm5_vectorized          0.550 ms    3902.7 GFLOP/s  ( 44.0% peak)  err 1.5e-06  OK
+   1024  cublas (cupy.matmul)       0.426 ms    5036.1 GFLOP/s  ( 56.8% peak)  err 0.0e+00  OK
+   2048  sgemm0_naive             232.210 ms      74.0 GFLOP/s  (  0.8% peak)  err 2.1e-06  OK
+   2048  sgemm1_coalesced          30.883 ms     556.3 GFLOP/s  (  6.3% peak)  err 2.1e-06  OK
+   2048  sgemm2_smem_tiled         25.328 ms     678.3 GFLOP/s  (  7.6% peak)  err 2.1e-06  OK
+   2048  sgemm3_1d_blocktile        8.169 ms    2103.0 GFLOP/s  ( 23.7% peak)  err 2.1e-06  OK
+   2048  sgemm4_2d_blocktile        4.945 ms    3473.9 GFLOP/s  ( 39.2% peak)  err 2.1e-06  OK
+   2048  sgemm5_vectorized          3.718 ms    4620.5 GFLOP/s  ( 52.1% peak)  err 2.1e-06  OK
+   2048  cublas (cupy.matmul)       3.374 ms    5092.5 GFLOP/s  ( 57.4% peak)  err 0.0e+00  OK
+   4096  sgemm0_naive            1854.473 ms      74.1 GFLOP/s  (  0.8% peak)  err 3.5e-06  OK
+   4096  sgemm1_coalesced         249.555 ms     550.7 GFLOP/s  (  6.2% peak)  err 3.5e-06  OK
+   4096  sgemm2_smem_tiled        202.291 ms     679.4 GFLOP/s  (  7.7% peak)  err 3.5e-06  OK
+   4096  sgemm3_1d_blocktile       64.915 ms    2117.2 GFLOP/s  ( 23.9% peak)  err 3.5e-06  OK
+   4096  sgemm4_2d_blocktile       39.970 ms    3438.6 GFLOP/s  ( 38.8% peak)  err 3.5e-06  OK
+   4096  sgemm5_vectorized         30.639 ms    4485.8 GFLOP/s  ( 50.6% peak)  err 3.5e-06  OK
+   4096  cublas (cupy.matmul)      27.725 ms    4957.2 GFLOP/s  ( 55.9% peak)  err 0.0e+00  OK
+
+Wrote results to C:\Users\shubh\Documents\4-1\CUDA\code\results

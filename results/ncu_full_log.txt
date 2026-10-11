@@ -1,0 +1,19 @@
+==WARNING== Note: Running with unmodified GPU clocks. If not controlled otherwise, profiling results may be inconsistent.
+==PROF== Connected to process 23892 (C:\Users\shubh\AppData\Local\Programs\Python\Python313\python.exe)
+==PROF== Profiling "reduce0_interleaved_divergent": 0%....50%....100% - 45 passes
+==PROF== Profiling "reduce1_interleaved_bankconflict": 0%....50%....100% - 45 passes
+==PROF== Profiling "reduce2_sequential": 0%....50%....100% - 45 passes
+==PROF== Profiling "reduce3_first_add": 0%....50%....100% - 45 passes
+==PROF== Profiling "reduce4_warp_shuffle": 0%....50%....100% - 45 passes
+==PROF== Profiling "reduce5_gridstride_vec4": 0%....50%....100% - 45 passes
+==PROF== Profiling "sgemm0_naive": 0%
+==WARNING== Launching the workload is taking more time than expected. If this continues to hang, terminate the profile and re-try by profiling the range of all related launches using '--replay-mode range'. See https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#replay for more details.
+....50%....100% - 49 passes
+==PROF== Profiling "sgemm1_coalesced": 0%....50%....100% - 45 passes
+==PROF== Profiling "sgemm2_smem_tiled": 0%....50%....100% - 45 passes
+==PROF== Profiling "sgemm3_1d_blocktile": 0%....50%....100% - 45 passes
+==PROF== Profiling "sgemm4_2d_blocktile": 0%....50%....100% - 45 passes
+==PROF== Profiling "sgemm5_vectorized": 0%....50%....100% - 45 passes
+launched all kernels
+==PROF== Disconnected from process 23892
+==PROF== Report: C:\Users\shubh\Documents\4-1\CUDA\code\results\ncu_full.ncu-repz
